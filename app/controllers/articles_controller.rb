@@ -28,13 +28,20 @@ class ArticlesController < ApplicationController
     end
 
     def update
-        # binding.break
+        # binding.break - Debug tool
         @article = Article.find(params[:id])
         if @article.update(params.require(:article).permit(:title, :description))
-            flash[:notice] = 'Article was created successfully'
+            flash[:notice] = 'Article was successfully updated'
             redirect_to @article
         else
             render 'edit'
         end
+    end
+    def destroy
+        @article = Article.find(params[:id])
+        @article.destroy
+        flash[:notice] = 'Article was successfully Deleted'
+        redirect_to articles_path, status: :see_other
+        
     end
 end 

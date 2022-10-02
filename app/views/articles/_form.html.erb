@@ -1,4 +1,4 @@
-<%= render 'errors' %>
+<%= render 'errors', obj: @article %>
 
 
 <%= form_with model: @article, local: true,  data: { turbo: false } do |form| %>

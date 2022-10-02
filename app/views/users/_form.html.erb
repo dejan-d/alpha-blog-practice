@@ -1,0 +1,21 @@
+<%= render 'articles/errors', obj: @user %>
+
+
+<%= form_with model: @user, local: true,  data: { turbo: false } do |form| %>
+    <p>
+        <%= form.label :username %> <br/>
+        <%= form.text_field :username, placeholder: "Enter a Username" %>
+    </p>
+    
+    <p>
+        <%= form.label :email %><br/>
+        <%= form.email_field :email, placeholder: "Enter your Email" %>       
+    </p>
+    <p>
+        <%= form.label :password %><br/>
+        <%= form.password_field :password, placeholder: "Choose your Password" %>       
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>

@@ -1,6 +1,10 @@
+<%= render 'pages/navbar' %>
 <h1>Articles List</h1>
 <p><%= link_to 'About Me', about_path  %></p>
 <br/>
+<div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+</div>
 <%= render 'article' %>
 <br />
 <p><%= link_to 'Create new Article', new_article_path %></p>

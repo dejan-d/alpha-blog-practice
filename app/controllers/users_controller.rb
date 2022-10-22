@@ -63,5 +63,4 @@ class   UsersController < ApplicationController
       redirect_to @user
     end
   end
-
 end

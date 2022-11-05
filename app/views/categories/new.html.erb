@@ -1,0 +1,19 @@
+<h1>Create New Category</h1>
+
+<%= render 'articles/errors', obj: @category %>
+
+
+<%= form_with model: @category, local: true,  data: { turbo: false } do |form| %>
+    <p>
+        <%= form.label :name, "Category Name" %> <br/>
+        <%= form.text_field :name, placeholder: "Enter a name" %>
+    </p>
+    
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
+
+
+<%= link_to 'Return to Articles List', articles_path %>
+<%= link_to 'Home', root_path %>
